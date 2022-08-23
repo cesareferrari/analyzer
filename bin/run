@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+# We must bind to 0.0.0.0 inside a
+# Docker container or the port won't forward
+
+if ! command -v foreman &> /dev/null
+then
+  echo "Installing foreman..."
+  gem install foreman
+fi
+
+foreman start -f Procfile.dev

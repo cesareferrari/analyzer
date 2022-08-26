@@ -1,6 +1,9 @@
 # Analyzer
 App for analyzing the Etsy store of Espressopress
 
+Application is visible at this URL:
+https://analyzer-production.up.railway.app/
+
 ## Setup
 1. Pull down the app from version control
 2. Make sure you have Postgres running

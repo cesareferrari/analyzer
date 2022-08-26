@@ -41,3 +41,7 @@
 # secrets we need for dev and test, so
 # we really don't want them in version control
 .env.*.local
+
+# Ignore data files that may contain sensitive information
+# (user names, orders, etc.)
+/db/data/*

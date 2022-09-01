@@ -1,3 +1,3 @@
 class Customer < ApplicationRecord
-  validates :name, :username, presence: true
+  validates :username, presence: true
 end

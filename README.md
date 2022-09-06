@@ -1,5 +1,9 @@
 # Analyzer
-App for analyzing the Etsy store of Espressopress
+Rails app for analyzing the Etsy store of Espressopress
+
+Hosted on Railway
+
+GitHub repository is: github.com:cesareferrari/analyzer.git
 
 Application is visible at this URL:
 https://analyzer-production.up.railway.app/

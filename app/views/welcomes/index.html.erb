@@ -2,4 +2,15 @@
 
 <p>This tool is used to analyze Etsy orders and customers</p>
 
-<%= link_to "Customers", customers_path %>
+<%= link_to "All Customers", customers_path, class: "button" %>
+
+<div class="my-8 p-4 border border-slate-100 rounded-lg bg-slate-50 w-1/2">
+  <h3 class="text-xl mb-4">Import Customers</h3>
+
+<%= form_with url: import_customers_path, method: :post do |f| %>
+  <p>
+    <%= f.file_field :file, accept: ".csv" %>
+    <%= f.submit "Import", class: "button" %>
+  </p>
+<% end %>
+</div>

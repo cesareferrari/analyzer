@@ -1,7 +1,7 @@
 <%= link_to sanitize("&larr; Back to Home"), root_path,
   class: "mb-8 inline-block p-2 bg-slate-100" %>
 
-<h1>Customers</h1>
+<h1><%= pluralize(Customer.count, "Customer") %></h1>
 
 <% @customers.each do |customer| %>
   <div>

@@ -92,3 +92,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem "smarter_csv", "~> 1.7", ">= 1.7.2"

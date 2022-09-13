@@ -3,9 +3,22 @@
 
 <h1><%= pluralize(Customer.count, "Customer") %></h1>
 
-<% @customers.each do |customer| %>
-  <div>
-    <%= customer.username %> - 
-    <%= customer.name %>
-  </div>
-<% end %>
+
+<table class="table-auto">
+  <tr class="items-top">
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Username
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Name
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Address
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Customer page
+    </td>
+  </tr>
+
+  <%= render @customers %>
+</table>

@@ -8,4 +8,8 @@ class Customer < ApplicationRecord
   def name
     [first, last].join(" ")
   end
+
+  def page_url
+    "https://etsy.com/people/#{username}"
+  end
 end

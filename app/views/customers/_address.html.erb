@@ -1,0 +1,6 @@
+<div class="text-sm">
+<%= customer.address1 if customer.address1.present? %>
+<%= "<br />#{customer.address2}".html_safe if customer.address2.present? %>
+<%= "<br />#{customer.city}, #{customer.state} #{customer.zip}".html_safe %>
+<%= "<br />#{customer.country}".html_safe %>
+</div>

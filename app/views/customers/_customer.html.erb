@@ -1,0 +1,8 @@
+<tr class="<%= cycle("bg-slate-50", "bg-white") %> align-top">
+  <td class="p-4"><%= customer.username %></td>
+  <td class="p-4"><%= customer.name %></td>
+  <td class="p-4"><%= render "address", customer: customer %></td>
+  <td class="p-4">
+    <%= link_to "View Page", customer.page_url, class: "uppercase text-xs tracking-wide hover:underline", target: "_new" %>
+  </td>
+</tr>

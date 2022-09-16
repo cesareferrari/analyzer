@@ -1,27 +1,22 @@
-<h1><%= pluralize(Customer.count, "Customer") %></h1>
+<h1><%= pluralize(Product.count, "Products") %></h1>
 
 <%= render "import_form" %>
 
 <table class="border-2 border-white bg-white table-auto my-8 w-full mx-auto">
   <tr class="items-top">
     <td class="uppercase text-sm tracking-wider font-bold p-4">
-      Username
+      Listing ID
     </td>
     <td class="uppercase text-sm tracking-wider font-bold p-4">
       Name
     </td>
     <td class="uppercase text-sm tracking-wider font-bold p-4">
-      Address
+      Price
     </td>
     <td class="uppercase text-sm tracking-wider font-bold p-4">
-      Customer page
+      Page
     </td>
   </tr>
 
-  <%= render @customers %>
+  <%= render @products %>
 </table>
-
-<%= render 'shared/pagination', pagination: @pagination %>
-
-<%= link_to sanitize("&larr; Back to Home"), root_path,
-  class: "my-8 inline-block p-2 bg-sky-100" %>

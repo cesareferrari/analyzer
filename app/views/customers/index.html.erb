@@ -1,20 +1,6 @@
 <h1><%= pluralize(Customer.count, "Customer") %></h1>
 
-<div class="my-8 p-4 border border-slate-100 rounded-lg bg-slate-50 w-1/2">
-  <h3 class="text-xl mb-4">Import Customers</h3>
-  <p>
-  Import file: <span class="italic">EtsySoldOrders2022.csv</span> <br />
-  Existing customers will be skipped
-  </p>
-
-<%= form_with url: import_customers_path, method: :post do |f| %>
-  <p>
-    <%= f.file_field :file, accept: ".csv" %>
-    <%= f.submit "Import", class: "button" %>
-  </p>
-<% end %>
-</div>
-
+<%= render "import_form" %>
 
 <table class="border-2 border-white bg-white table-auto my-8 w-full mx-auto">
   <tr class="items-top">

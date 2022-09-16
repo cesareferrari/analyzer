@@ -1,0 +1,8 @@
+<tr class="<%= cycle("bg-sky-50", "bg-white") %> align-top">
+  <td class="p-4"><%= product.listing_id %></td>
+  <td class="p-4"><%= product.name %></td>
+  <td class="p-4"><%= number_to_currency(product.price) %></td>
+  <td class="p-4">
+    <%= link_to "View on Etsy", product.url, class: "uppercase text-xs tracking-wide hover:underline", target: "_new" %>
+  </td>
+</tr>

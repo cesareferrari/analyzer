@@ -39,4 +39,9 @@ class ProductTest < ActiveSupport::TestCase
     product_one.listing_id = product_two.listing_id
     assert product_one.invalid?
   end
+
+  test "price in dollars" do
+    product = products(:one)
+    assert_equal 1.99, product.price
+  end
 end

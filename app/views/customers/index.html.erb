@@ -1,10 +1,22 @@
-<%= link_to sanitize("&larr; Back to Home"), root_path,
-  class: "mb-8 inline-block p-2 bg-slate-100" %>
-
 <h1><%= pluralize(Customer.count, "Customer") %></h1>
 
+<div class="my-8 p-4 border border-slate-100 rounded-lg bg-slate-50 w-1/2">
+  <h3 class="text-xl mb-4">Import Customers</h3>
+  <p>
+  Import file: <span class="italic">EtsySoldOrders2022.csv</span> <br />
+  Existing customers will be skipped
+  </p>
 
-<table class="table-auto">
+<%= form_with url: import_customers_path, method: :post do |f| %>
+  <p>
+    <%= f.file_field :file, accept: ".csv" %>
+    <%= f.submit "Import", class: "button" %>
+  </p>
+<% end %>
+</div>
+
+
+<table class="border-2 border-white bg-white table-auto my-8 w-full mx-auto">
   <tr class="items-top">
     <td class="uppercase text-sm tracking-wider font-bold p-4">
       Username
@@ -22,3 +34,8 @@
 
   <%= render @customers %>
 </table>
+
+<%= render 'shared/pagination', pagination: @pagination %>
+
+<%= link_to sanitize("&larr; Back to Home"), root_path,
+  class: "my-8 inline-block p-2 bg-sky-100" %>

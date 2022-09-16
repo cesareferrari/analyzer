@@ -1,16 +1,12 @@
-<h1 class="text-4xl">Etsy Analyzer</h1>
+<p>A tool to analyze Etsy orders and customers.</p>
 
-<p>This tool is used to analyze Etsy orders and customers</p>
 
-<%= link_to "All Customers", customers_path, class: "button" %>
+<div class="grid grid-cols-1 lg:grid-cols-3">
 
-<div class="my-8 p-4 border border-slate-100 rounded-lg bg-slate-50 w-1/2">
-  <h3 class="text-xl mb-4">Import Customers</h3>
-
-<%= form_with url: import_customers_path, method: :post do |f| %>
-  <p>
-    <%= f.file_field :file, accept: ".csv" %>
-    <%= f.submit "Import", class: "button" %>
-  </p>
-<% end %>
+<div class="rounded shadow p-4 bg-white">
+  <p>You have <%= pluralize(Customer.count, "Customer") %></p>
+  <%= link_to "View All Customers", customers_path, class: "button" %>
 </div>
+
+</div>
+

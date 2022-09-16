@@ -1,0 +1,24 @@
+<div class="flex space-x-20 my-8 justify-center items-center">
+  <% if pagination.previous_page? 
+%>
+    <%= link_to "First", customers_path(page: 1), class: "button" %>
+    <%= link_to sanitize("&larr; Previous"),
+      customers_path(page: pagination.previous_page),
+      class: "button" %>
+  <% else %>
+    <span class="text-slate-400 button hover:bg-slate-200">First</span>
+    <span class="text-slate-400 button hover:bg-slate-200">&larr; Previous</span>
+  <% end %>
+
+  <span><%= "Page #{pagination.page} of #{pagination.total_pages}" %></span>
+
+  <% if pagination.next_page? %>
+    <%= link_to sanitize("Next &rarr;"), customers_path(page: pagination.next_page), class: "button" %>
+    <%= link_to "Last",
+      customers_path(page: pagination.total_pages),
+      class: "button" %>
+  <% else %>
+    <span class="text-slate-400 button hover:bg-slate-200">Next &rarr;</span>
+    <span class="text-slate-400 button hover:bg-slate-200">Last</span>
+  <% end %>
+</div>

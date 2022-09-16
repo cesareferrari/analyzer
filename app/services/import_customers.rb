@@ -1,4 +1,5 @@
 class ImportCustomers
+  # Import customers from this Etsy file: EtsySoldOrders2022.csv
   def call(file)
     options = {key_mapping: {first_name: :first,
                              last_name: :last,

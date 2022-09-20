@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2022-09-19 15:26:45
+  etsy_order_id: MyString
+  coupon_code: MyString
+  value_cents: 1
+  discount_cents: 1
+  total_cents: 1
+  card_processing_fees_cents: 1
+  net_cents: 1
+  customer: one
+
+two:
+  date: 2022-09-19 15:26:45
+  etsy_order_id: MyString
+  coupon_code: MyString
+  value_cents: 1
+  discount_cents: 1
+  total_cents: 1
+  card_processing_fees_cents: 1
+  net_cents: 1
+  customer: two

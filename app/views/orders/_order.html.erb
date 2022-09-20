@@ -1,0 +1,11 @@
+<tr class="<%= cycle("bg-sky-50", "bg-white") %> align-top">
+  <td class="p-4"><%= order.date&.to_fs(:default) %></td>
+  <td class="p-4"><%= order.etsy_order_id %></td>
+  <td class="p-4"><%= number_to_currency(order.value) %></td>
+  <td class="p-4"><%= order.coupon_code %></td>
+  <td class="p-4"><%= number_to_currency(order.discount) %></td>
+  <td class="p-4"><%= number_to_currency(order.total) %></td>
+  <td class="p-4"><%= number_to_currency(order.card_processing_fees) %></td>
+  <td class="p-4"><%= number_to_currency(order.net) %></td>
+  <td class="p-4"><%= order.customer.username %></td>
+</tr>

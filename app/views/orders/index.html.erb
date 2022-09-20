@@ -1,0 +1,37 @@
+<h1><%= pluralize(Order.count, "Order") %></h1>
+
+<%= render "import_form" %>
+
+<table class="border-2 border-white bg-white table-auto my-8 w-full mx-auto">
+  <tr class="items-top">
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Date
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Order ID
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Value
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Coupon
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+      Discount
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+     Total 
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+     Fee 
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+     Net 
+    </td>
+    <td class="uppercase text-sm tracking-wider font-bold p-4">
+     Customer 
+    </td>
+  </tr>
+
+  <%= render @orders %>
+</table>

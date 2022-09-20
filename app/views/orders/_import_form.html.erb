@@ -1,0 +1,15 @@
+<div class="my-8 p-4 border border-slate-100 rounded-lg bg-slate-50 w-1/2">
+  <h3 class="text-xl mb-4">Import Orders</h3>
+  <p>
+  Import file: <span class="italic">EtsySoldOrders2022.csv</span> <br />
+  Existing orders will be skipped
+  </p>
+
+<%= form_with url: import_orders_path, method: :post do |f| %>
+  <p>
+    <%= f.file_field :file, accept: ".csv" %>
+    <%= f.submit "Import", class: "button" %>
+  </p>
+<% end %>
+</div>
+

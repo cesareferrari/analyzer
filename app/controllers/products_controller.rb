@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :require_signin
+
   def index
     @products = Product.order(:name)
   end

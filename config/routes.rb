@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :session, only: [:new, :create, :destroy]
+  resources :users
   resources :orders, only: [:index] do
     collection do
       post :import

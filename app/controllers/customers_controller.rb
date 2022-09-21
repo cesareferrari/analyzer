@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  before_action :require_signin
+
   include Pagination
 
   CUSTOMERS_PER_PAGE = 30

@@ -1,12 +1,13 @@
-<p>A tool to analyze Etsy orders and customers.</p>
+<h1 class="text-4x text-center">A tool to analyze Etsy orders and customers.</h1>
 
+  <p class="text-center my-24"><%= link_to "Sign in", new_session_path, class: "button" %></p>
 
-<div class="grid grid-cols-1 lg:grid-cols-3">
+  <%= image_tag "cover.webp" %>
 
-<div class="rounded shadow p-4 bg-white">
-  <p>You have <%= pluralize(Customer.count, "Customer") %></p>
-  <%= link_to "View All Customers", customers_path, class: "button" %>
-</div>
-
-</div>
+<%# <div class="grid grid-cols-1 lg:grid-cols-3"> %>
+<%# <div class="rounded shadow p-4 bg-white"> %>
+<%#   <p>You have <%= pluralize(Customer.count, "Customer") %1></p> %>
+<%#   <%= link_to "View All Customers", customers_path, class: "button" %1> %>
+<%# </div> %>
+<%# </div> %>
 

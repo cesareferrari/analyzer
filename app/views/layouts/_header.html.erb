@@ -6,6 +6,17 @@
     <%= link_to "Customers", customers_path, class: "pb-1 border-b-4 border-white hover:border-orange-400" %>
     <%= link_to "Orders", orders_path, class: "pb-1 border-b-4 border-white hover:border-orange-400" %>
     <%= link_to "Products", products_path, class: "pb-1 border-b-4 border-white hover:border-orange-400" %>
+
+    <% if current_user %>
+      <%= button_to "Sign out",
+        session_path,
+        method: :delete,
+        class: "uppercase",
+        form_class: "pb-1 border-b-4 border-white hover:border-orange-400" %>
+      <span class="pb-1 border-b-4 border-white"><%= current_user.name %></span>
+    <% else %>
+      <%= link_to "Sign in", new_session_path, class: "pb-1 border-b-4 border-white hover:border-orange-400" %>
+    <% end %>
   </nav>
 </div>
 </div>

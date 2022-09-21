@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :require_signin
+
   def index
     @orders = Order.order(date: :desc)
   end

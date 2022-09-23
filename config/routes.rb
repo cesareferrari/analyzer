@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
   resource :session, only: [:new, :create, :destroy]
   resources :users
   resources :orders, only: [:index] do

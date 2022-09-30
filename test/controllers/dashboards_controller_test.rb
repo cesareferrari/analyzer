@@ -1,6 +1,6 @@
 require "test_helper"
 
-class OrdersControllerTest < ActionDispatch::IntegrationTest
+class DashboardsControllerTest < ActionDispatch::IntegrationTest
   setup do
     # log in admin
     user = users(:one)
@@ -8,7 +8,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get orders_url
+    get dashboards_url
     assert_response :success
   end
 end

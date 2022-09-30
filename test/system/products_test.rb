@@ -6,7 +6,16 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit products_url
+    visit new_session_url
+
+    within "#sign-in" do
+      fill_in "Email", with: users(:one).email
+      fill_in "Password", with: "secret"
+      click_on "Sign in"
+    end
+
+    click_on "Products", match: :first
+
     assert_selector "h1", text: "Products"
     assert_text @product.name
   end

@@ -1,4 +1,7 @@
 <div>
-  <h1 class="font-bold text-4xl">Dashboards#index</h1>
-  <p>Find me in app/views/dashboards/index.html.erb</p>
+  <h1 class="font-bold text-4xl">Dashboard</h1>
+
+    <h2><%= link_to "Customers", customers_path, class: "hover:underline" %></h2>
+    <h2><%= link_to "Orders", orders_path, class: "hover:underline" %></h2>
+    <h2><%= link_to "Products", products_path, class: "hover:underline" %></h2>
 </div>

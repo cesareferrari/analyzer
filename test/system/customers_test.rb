@@ -10,13 +10,6 @@ class CustomersTest < ApplicationSystemTestCase
       click_on "Sign in"
     end
 
-    puts page.html
-
-    # user = users(:one)
-    # @request.session[:user_id] = user.id
-
-    # visit customers_path
-
     click_on "Customers", match: :first
 
     assert_selector "h1", text: "Customers"

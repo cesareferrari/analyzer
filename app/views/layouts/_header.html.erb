@@ -8,6 +8,7 @@
     <%= link_to "Products", products_path, class: "pb-1 border-b-4 border-white hover:border-orange-400" %>
 
     <% if current_user %>
+      <%= link_to "Dashboard", dashboards_path, class: "pb-1 border-b-4 border-white hover:border-orange-400" %>
       <%= button_to "Sign out",
         session_path,
         method: :delete,

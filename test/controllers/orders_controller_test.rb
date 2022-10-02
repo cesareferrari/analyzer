@@ -11,4 +11,10 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     get orders_url
     assert_response :success
   end
+
+  test "should get show" do
+    order = orders(:one)
+    get order_url(id: order.id)
+    assert_response :success
+  end
 end

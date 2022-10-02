@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :customer
+  has_many :line_items
 
   def value
     value_cents.to_f / 100

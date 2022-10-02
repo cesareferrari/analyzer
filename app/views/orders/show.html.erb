@@ -1,0 +1,6 @@
+<h1>Order <%= @order.etsy_order_id %></h1>
+
+<% @order.line_items.each do |line_item| %>
+  <div><%= line_item.product.name %></div>
+<% end %>
+

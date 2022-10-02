@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
     @orders = Order.order(date: :desc)
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def import
     file = params[:file]
     return redirect_to welcome_path, notice: "Only CSV files accepted." unless file.content_type == "text/csv"

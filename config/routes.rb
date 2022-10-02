@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :dashboards, only: [:index]
   resource :session, only: [:new, :create, :destroy]
   resources :users
-  resources :orders, only: [:index] do
+
+  resources :orders, only: [:index, :show] do
     collection do
       post :import
     end

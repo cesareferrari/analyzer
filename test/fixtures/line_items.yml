@@ -3,11 +3,11 @@
 one:
   order: one
   product: one
-  quantity: MyString
-  price_cents: MyString
+  quantity: 1
+  price_cents: 495
 
 two:
   order: two
   product: two
-  quantity: MyString
-  price_cents: MyString
+  quantity: 2
+  price_cents: 199

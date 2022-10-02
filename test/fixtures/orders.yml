@@ -2,8 +2,8 @@
 
 one:
   date: 2022-09-19 15:26:45
-  etsy_order_id: MyString
-  coupon_code: MyString
+  etsy_order_id: 2575430774
+  coupon_code: 30OFFTHANKYOU
   value_cents: 1
   discount_cents: 1
   total_cents: 1
@@ -13,8 +13,8 @@ one:
 
 two:
   date: 2022-09-19 15:26:45
-  etsy_order_id: MyString
-  coupon_code: MyString
+  etsy_order_id: 2575405162
+  coupon_code: 40OFFFAVORITE
   value_cents: 1
   discount_cents: 1
   total_cents: 1

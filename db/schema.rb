@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_21_171512) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_02_184138) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_171512) do
     t.string "state"
     t.string "zip"
     t.string "country"
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "product_id", null: false
+    t.string "quantity"
+    t.string "price_cents"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -59,5 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_171512) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "line_items", "orders"
+  add_foreign_key "line_items", "products"
   add_foreign_key "orders", "customers"
 end

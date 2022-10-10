@@ -8,4 +8,5 @@
   <td class="p-4"><%= number_to_currency(order.card_processing_fees) %></td>
   <td class="p-4"><%= number_to_currency(order.net) %></td>
   <td class="p-4"><%= order.customer.username %></td>
+  <td class="p-4"><%= link_to "View order", order_path(order) %></td>
 </tr>

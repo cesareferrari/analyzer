@@ -1,7 +1,36 @@
 <div>
   <h1 class="font-bold text-4xl">Dashboard</h1>
 
-    <h2><%= link_to "Customers", customers_path, class: "hover:underline" %></h2>
-    <h2><%= link_to "Orders", orders_path, class: "hover:underline" %></h2>
-    <h2><%= link_to "Products", products_path, class: "hover:underline" %></h2>
+
+  <div class="grid grid-cols-5 gap-8">
+
+    <div class="border border-slate-500 p-8 flex flex-col space-y-4">
+      <h2 class="text-lg font-bold">Customers</h2>
+      <%= link_to "Customers", customers_path, class: "button" %>
+    </div>
+
+    <div class="border border-slate-500 p-8 flex flex-col space-y-4">
+      <h2 class="text-lg font-bold">Orders</h2>
+      <span>Total net: <%= number_to_currency(Order.total_net) %></span>
+      <%= link_to "All Orders", orders_path, class: "button" %>
+    </div>
+
+    <div class="border border-slate-500 p-8 flex flex-col space-y-4">
+      <h2 class="text-lg font-bold">Products</h2>
+      <%= link_to "Products", products_path, class: "button" %>
+    </div>
+
+    <div class="border border-slate-500 p-8 flex flex-col space-y-4">
+      <h2 class="text-lg font-bold">Returning customers</h2>
+      <div>
+        <% Customer.returning.each do |customer| %>
+          <div><%= customer.name %> [Orders: <%= customer.orders.count %>]</div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
 </div>
+
+

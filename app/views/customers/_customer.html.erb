@@ -1,5 +1,10 @@
 <tr class="<%= cycle("bg-sky-50", "bg-white") %> align-top">
-  <td class="p-4"><%= customer.username %></td>
+  <td class="p-4"><%= customer.username %>
+  <% if customer.orders.count > 1 %>
+    <%= pluralize(customer.orders.count, "orders") %>
+  <% end %>
+  </td>
+
   <td class="p-4"><%= customer.name %></td>
   <td class="p-4"><%= render "address", customer: customer %></td>
   <td class="p-4">

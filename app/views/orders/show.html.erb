@@ -1,0 +1,30 @@
+<h1>Order <%= @order.etsy_order_id %></h1>
+
+<section class="mb-8 border-b border-sky-500">
+  <div>Date: <%= @order.date&.to_fs(:default) %></div>
+  <div>Value: <%= number_to_currency(@order.value) %></div>
+  <div>Coupon code: <%= @order.coupon_code %></div>
+  <div>Discount: <%= number_to_currency(@order.discount) %></div>
+  <div>Order total:<%= number_to_currency(@order.total) %></div>
+  <div>Card processing fees: <%= number_to_currency(@order.card_processing_fees) %></div>
+  <div>Order net: <%= number_to_currency(@order.net) %></div>
+</section>
+
+
+<section class="mb-8 border-b border-sky-500">
+  <h2 class="text-xl">Products in order</h2>
+  <% @order.line_items.each do |line_item| %>
+    <div><%= line_item.product.name %>
+          (<%= number_to_currency(line_item.product.price) %>)
+    </div>
+  <% end %>
+</section>
+
+<section class="mb-8 border-b border-sky-500">
+  <h2 class="text-xl">Customer</h2>
+  <div>Etsy Username: <%= @order.customer.username %></div>
+  <div>Name: <%= @order.customer.name %></div>
+  <div>Address: <%= render "customers/address", customer: @order.customer %></div>
+  <div>Customer page: <%= link_to "View Page", @order.customer.page_url,
+    class: "uppercase text-xs tracking-wide hover:underline", target: "_new" %></div>
+</section>

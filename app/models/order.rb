@@ -25,4 +25,8 @@ class Order < ApplicationRecord
   def self.total_net
     sum(:net_cents).to_f / 100
   end
+
+  def self.average_net
+    average(:net_cents).to_i.to_f / 100
+  end
 end

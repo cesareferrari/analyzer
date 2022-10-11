@@ -5,23 +5,32 @@
   <div class="grid grid-cols-5 gap-8">
 
     <div class="border border-slate-500 p-8 flex flex-col space-y-4">
-      <h2 class="text-lg font-bold">Customers</h2>
+      <h2 class="text-lg font-bold">
+        <%= pluralize(Customer.count, "Customer") %>
+      </h2>
       <%= link_to "Customers", customers_path, class: "button" %>
     </div>
 
     <div class="border border-slate-500 p-8 flex flex-col space-y-4">
-      <h2 class="text-lg font-bold">Orders</h2>
+      <h2 class="text-lg font-bold">
+        <%= pluralize(Order.count, "Order") %>
+      </h2>
       <span>Total net: <%= number_to_currency(Order.total_net) %></span>
+      <span>Average net per order: <%= number_to_currency(Order.average_net) %></span>
       <%= link_to "All Orders", orders_path, class: "button" %>
     </div>
 
     <div class="border border-slate-500 p-8 flex flex-col space-y-4">
-      <h2 class="text-lg font-bold">Products</h2>
+      <h2 class="text-lg font-bold">
+        <%= pluralize(Product.count, "Product") %>
+      </h2>
       <%= link_to "Products", products_path, class: "button" %>
     </div>
 
     <div class="border border-slate-500 p-8 flex flex-col space-y-4">
-      <h2 class="text-lg font-bold">Returning customers</h2>
+      <h2 class="text-lg font-bold">
+        <%= pluralize(Customer.returning.count, "Returning customer") %>
+      </h2>
       <div>
         <% Customer.returning.each do |customer| %>
           <div><%= customer.name %> [Orders: <%= customer.orders.count %>]</div>
